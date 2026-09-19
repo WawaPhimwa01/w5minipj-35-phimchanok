@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Mali:wght@600;700&family=Sarabun:wght@400;500;600&display=swap');
+ 
+:root {
+  --starlight: #FFFBE6;   
+  --butter:    #FFF0A8;   
+  --sun:       #FFD95A;   
+  --sun-deep:  #E3A800;   
+  --ink:       #4A3712;   
+  --ink-soft:  #7D6A3A;   
+  --line:      #F3E39B;   
+  --paper:     #FFFFFF;
+ 
+  --font-head: "Mali", "Sarabun", Tahoma, sans-serif;
+  --font-body: "Sarabun", Tahoma, sans-serif;
+}
+ 
+
+* { box-sizing: border-box; }
+ 
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background-color: var(--starlight);
+
+
+  background-image:
+    radial-gradient(circle at 92% 6%, rgba(255, 217, 90, .45), transparent 34%),
+    radial-gradient(circle at 24px 32px, rgba(227, 168, 0, .30) 1.5px, transparent 2.5px),
+    radial-gradient(circle at 78px 84px, rgba(227, 168, 0, .22) 1px, transparent 2px);
+  background-size: auto, 96px 96px, 96px 96px;
+  background-attachment: fixed;
+}
+ 
+a { color: inherit; }
+ 
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--butter);
+  border-bottom: 3px solid var(--sun);
+}
+ 
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+ 
+.nav-logo {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: var(--ink);
+}
+ 
+.nav-logo::before {
+  content: "✦";
+  color: var(--sun-deep);
+  margin-right: .4em;
+}
+ 
+.nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+ 
+.nav-item { margin: 0; }
+ 
+.nav-link,
+.nav-menu > a {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--ink);
+  transition: background-color .15s;
+}
+ 
+.nav-link:hover { background: var(--sun); }
+ 
+/* ปุ่ม Log out (ลิงก์ที่ไม่มี class อยู่ใน ul) */
+.nav-menu > a {
+  margin-left: 8px;
+  border: 2px solid var(--sun-deep);
+}
+.nav-menu > a:hover { background: var(--sun-deep); color: #fff; }
+ 
+
+.page {
+  width: min(1200px, 94%);
+  margin: 32px auto;
+  overflow-x: auto;
+}
+ 
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--paper);
+  border: 2px solid var(--butter);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(227, 168, 0, .15);
+}
+ 
+th {
+  background: var(--sun);
+  color: var(--ink);
+  font-family: var(--font-head);
+  font-weight: 600;
+  text-align: left;
+  padding: 14px 16px;
+  white-space: nowrap;
+}
+ 
+
+th, td { border: 0; }
+ 
+td {
+  padding: 14px 16px;
+  vertical-align: middle;
+  border-bottom: 1px solid #FBF0BC;
+}
+ 
+table tr:last-child td { border-bottom: 0; }
+table tr:nth-child(even) td { background: #FFFDF0; }
+table tr:hover td { background: #FFF6C9; }
+ 
+td img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 3px solid #fff;
+  outline: 1px solid var(--line);
+}
+ 
+
+td a {
+  display: inline-block;
+  padding: 5px 14px;
+  margin-right: 6px;
+  border-radius: 999px;
+  background: var(--butter);
+  color: var(--ink);
+  font-size: .9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color .15s;
+}
+td a:hover { background: var(--sun); }
+ 
+td a[href*="delete"] { background: #FFE4DD; color: #9C3B2A; }
+td a[href*="delete"]:hover { background: #FFCFC3; }
+ 
+
+form {
+  width: min(92%, 460px);
+  margin: 48px auto;
+  padding: 32px 32px 28px;
+  background: var(--paper);
+  border: 2px solid var(--butter);
+  border-radius: 22px;
+  box-shadow: 0 10px 30px rgba(227, 168, 0, .18);
+}
+ 
+form h1 {
+  margin: 0 0 12px;
+  text-align: center;
+  font-family: var(--font-head);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+ 
+
+form h1::before,
+form h1::after {
+  content: "✦";
+  color: var(--sun-deep);
+  font-size: .8em;
+  margin: 0 .5em;
+}
+ 
+form br { display: none; }  
+ 
+label {
+  display: block;
+  margin: 16px 0 6px;
+  font-weight: 600;
+}
+ 
+input,
+select {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  font: inherit;
+  color: var(--ink);
+  background: #FFFEF5;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+}
+ 
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--sun-deep);
+  box-shadow: 0 0 0 4px rgba(255, 217, 90, .5);
+}
+ 
+input[readonly] {
+  background: #FFF5CC;
+  color: var(--ink-soft);
+  cursor: not-allowed;
+}
+ 
+button {
+  display: block;
+  width: 100%;
+  margin-top: 24px;
+  padding: 12px 20px;
+  font-family: var(--font-head);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--sun);
+  border: 0;
+  border-radius: 999px;
+  box-shadow: 0 4px 0 var(--sun-deep);   /* ปุ่มนูนแบบสติกเกอร์ */
+  cursor: pointer;
+  transition: background-color .15s, transform .1s, box-shadow .1s;
+}
+button:hover  { background: #FFE27A; }
+button:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--sun-deep); }
+button:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+ 
+
+form .nav-link {
+  display: block;
+  margin-top: 14px;
+  padding: 4px;
+  text-align: center;
+  color: var(--ink-soft);
+  text-decoration: underline;
+}
+form .nav-link:hover { background: transparent; color: var(--ink); }
+ 
+
+.Login-from {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+.Login-from form { margin: 0; }
+ 
+.Login-from form::before {
+  content: "✦ LLT Crystal Shop ✦";
+  display: block;
+  margin-bottom: 8px;
+  text-align: center;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--ink);
+}
+ 
+
+footer {
+  margin-top: auto;
+  padding: 20px 16px;
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: .9rem;
+  background: var(--butter);
+  border-top: 3px solid var(--sun);
+}
+footer p { margin: 0; }

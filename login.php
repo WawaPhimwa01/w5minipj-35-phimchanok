@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
 </head>
 <body>
     <div class="Login-from">
@@ -13,7 +13,7 @@
         <input type="text" name="username"> <br>
 
         <label for="">password</label>
-        <input type="text" name="password"> <br>
+        <input type="password" name="password"> <br>
 
         <button>LOGIN</button>
     </form>
