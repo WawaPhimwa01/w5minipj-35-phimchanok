@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 19, 2026 at 07:28 AM
+-- Generation Time: Sep 22, 2026 at 10:51 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -47,6 +47,49 @@ INSERT INTO `crystal` (`crystal_id`, `crystal_name`, `crystal_color`, `crystal_s
 (3, 'Obsidian', 'Black', 'L', 'https://mountainjade.ca/cdn/shop/files/IMG_4540.heic?v=1735946073&width=2200', 3500, 4),
 (4, 'Clear Quartz', 'White', 'XL', 'https://merkababedesigns.com/cdn/shop/products/IMG_5292_4074deea-db7f-4758-adf2-b043fb7b7392_2048x2048.jpg?v=1675387238', 5990, 3);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `type`
+--
+
+CREATE TABLE `type` (
+  `type_id` int(5) NOT NULL,
+  `type_name` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `type`
+--
+
+INSERT INTO `type` (`type_id`, `type_name`) VALUES
+(1, 'โชคลาภ'),
+(2, 'ความรัก'),
+(4, 'สุขภาพ'),
+(5, 'ป้องกันภัย');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `username` varchar(150) NOT NULL,
+  `password` int(4) NOT NULL,
+  `fname` varchar(100) NOT NULL,
+  `lname` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `password`, `fname`, `lname`) VALUES
+(1, 'ieatcrystal', 1234, 'Dekchaisomsee', 'Asha'),
+(2, 'omgwhoru', 6767, 'Dekshaisompong', 'Itsallyours');
+
 --
 -- Indexes for dumped tables
 --
@@ -58,6 +101,18 @@ ALTER TABLE `crystal`
   ADD PRIMARY KEY (`crystal_id`);
 
 --
+-- Indexes for table `type`
+--
+ALTER TABLE `type`
+  ADD PRIMARY KEY (`type_id`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -66,6 +121,18 @@ ALTER TABLE `crystal`
 --
 ALTER TABLE `crystal`
   MODIFY `crystal_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `type`
+--
+ALTER TABLE `type`
+  MODIFY `type_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
